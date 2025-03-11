@@ -1,0 +1,2 @@
+# xoroshiro
+cracking it
