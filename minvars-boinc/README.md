@@ -8,7 +8,7 @@ python client.py NameOfConfig NumIters RngSeed [InputFileIfDifferent]
 ```
 e.g.
 ```
-python client.py config-001-from2nextlongs-rand42.npz 1000000 1
+python client.py config-001-from2nextlongs-rand64.npz 1000000 1
 ```
 
 Saves output in output.txt
