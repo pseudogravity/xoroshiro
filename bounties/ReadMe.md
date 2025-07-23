@@ -116,7 +116,7 @@ Because Minecraft\@Home encourages public engagement, all submissions are public
 
 **Submission package must include**
 
-* Source code and any non‑source data (with origins or generation scripts).
+* Source code and any non‑source data files (with origins or generation scripts).
 * If parallelization involves non‑trivial pre/post‑processing, all associated code.
 * A written document containing:
 
@@ -124,7 +124,7 @@ Because Minecraft\@Home encourages public engagement, all submissions are public
   * A thorough explanation of your algorithm and optimizations.
   * Your own estimate of performance gain versus the baseline or prior entries.
 
-Contestants who wish to make multiple submissions must ensure each entry is self‑contained and declared separately.
+Contestants who wish to make multiple submissions must wait at least one week between submissions. Each entry must be self‑contained and declared separately.
 
 ---
 
