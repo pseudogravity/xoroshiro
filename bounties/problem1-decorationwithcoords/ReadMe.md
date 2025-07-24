@@ -36,7 +36,7 @@ Given `worldSeed`, `chunkX`, and `chunkZ`, the program returns `a`, `b`, and the
 
 ---
 
-### Core Challenge
+### Core Challenge and Baseline Solution
 
 Right now, there is no efficient method to determine the world seed from the decoration seed. For this bounty competition, we are challenging you to develop a fast algorithm to solve this reverse problem. Given the values of **decoration seed**, **chunk x**, and **chunk z**, your code should output **all matching 64‑bit world seeds**.
 
@@ -45,7 +45,7 @@ The current best known strategy is brute‑forcing over possible world seeds, le
 Submitted code may be **parallelizable** or **non‑parallelizable**:
 
 * *Non‑parallelizable* algorithms run on a single machine.
-* A *parallelizable* algorithm allows the search space to be split into disjoint subsets processed independently. If the pre‑ or post‑processing steps required by your algorithm are more complex than simply dividing ranges and merging results, include the necessary code and explanations.
+* A *parallelizable* algorithm allows the search space to be split into disjoint subsets processed independently. If the pre‑ or post‑processing steps required by your algorithm are more complex than simply dividing ranges and merging results, include the necessary code and explanations. The baseline solution `decorationreverse.cu` is an example of a parallelizable algorithm.
 
 ---
 
@@ -75,7 +75,7 @@ Example test cases can be generated with the forward algorithm in `worldtodeco
 
 ### Evaluation
 
-Submissions are judged on **expected runtime** relative to the baseline on a notional BOINC‑style grid of 256 desktop PCs, each with an RTX 4090 GPU and an i9‑13900K CPU. Because exhaustive 2**60 searches are infeasible to benchmark directly, Minecraft\@Home members will run partial benchmarks and extrapolate to this environment.
+Submissions are judged on **expected runtime** relative to the baseline on a notional BOINC‑style grid of 256 desktop PCs, each with an RTX 4090 GPU and an i9‑13900K CPU. Because exhaustive 2**60 searches are infeasible to benchmark directly, Minecraft\@Home members will run partial benchmarks and extrapolate to this hypothetical environment.
 
 Each submission receives a **logarithmic score**:
 
@@ -83,13 +83,13 @@ Each submission receives a **logarithmic score**:
 Score = 60 + log2(projected runtime of your code / projected runtime of baseline code decorationreverse.cu)
 ```
 
-Lower scores are better: a one‑point drop corresponds to cutting the brute‑force complexity by one bit (e.g., an 8x speedup yields a score of 57). We will aim to be fair and consistent, but organizers have final say. Minor, inconsistent, or hard‑to‑measure improvements receive a tying score. Due to the difficulty of assigning scores, submissions that are not in contention for a prize may not receive a precise score. Submissions may be disqualified for rule violations, legal concerns, or impractical deployment.
+Lower scores are better: a one‑point drop corresponds to cutting the brute‑force complexity by one bit. Our baseline code, which performs a 60-bit brute force, is assigned a score of 60. If, for example, your submission yields an 8x speedup, it would be assigned a score of 57. We will aim to be fair and consistent, but organizers have final say. We will attempt to tune parameters (e.g., grid and block dimensions for GPU code) to maximize performance. Minor, inconsistent, or hard‑to‑measure improvements receive a tying score. Due to the difficulty of assigning scores, submissions that are not in contention for a prize may not receive a precise score. Submissions may be disqualified for rule violations, legal concerns, or impractical deployment.
 
 ---
 
 ### Incremental Awards
 
-Prize money is proportional to performance improvement over the current leader:
+Prize money is proportional to performance improvement over the current leader.
 
 ```
 Award = (previous top score - your score) / previous top score * remaining prize pool
