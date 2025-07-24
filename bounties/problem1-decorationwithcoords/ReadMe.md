@@ -9,7 +9,7 @@ In Minecraft, each chunk has a decoration seed, a value derived from the world s
 
 ---
 
-### Background and Reference Implementation
+### Background and Forward Implementation
 
 In the attached file `worldtodecoration.cpp`, we provide a self‑contained reference implementation of the forward algorithm, which calculates the decoration seed for any combination of world seed and coordinate pair.
 
@@ -80,7 +80,7 @@ Submissions are judged on **expected runtime** relative to the baseline on a not
 Each submission receives a **logarithmic score**:
 
 ```
-Score = 60 + log2(projected runtime of your code / projected runtime of baseline code)
+Score = 60 + log2(projected runtime of your code / projected runtime of baseline code decorationreverse.cu)
 ```
 
 Lower scores are better: a one‑point drop corresponds to cutting the brute‑force complexity by one bit (e.g., an 8x speedup yields a score of 57). We will aim to be fair and consistent, but organizers have final say. Minor, inconsistent, or hard‑to‑measure improvements receive a tying score. Due to the difficulty of assigning scores, submissions that are not in contention for a prize may not receive a precise score. Submissions may be disqualified for rule violations, legal concerns, or impractical deployment.
