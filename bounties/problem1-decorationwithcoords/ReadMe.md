@@ -89,7 +89,7 @@ Lower scores are better: a one‑point drop corresponds to cutting the brute‑f
 
 ### Incremental Awards
 
-Prize money is proportional to performance improvement over the current leader.
+Prize money is proportional to performance improvement over the current leader. Each "bit" of complexity reduction translates to a certain amount of money won.
 
 ```
 Award = (previous top score - your score) / previous top score * remaining prize pool
