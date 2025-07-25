@@ -1,6 +1,9 @@
 (unofficial work-in-project text)
 
 ## Bounty Problem 1: Decoration seed to world seed with known coordinates
+
+Minecraft@Home is proud to announce our first programming bounty competition, complete with a total prize pool of **over US $5000**. As a competitor, you are tasked with designing an efficient algorithm to solve a very difficult problem related to Minecraft seedfinding. The faster your code, the better. Prizes are awarded on a ongoing basis: whenever a new speed record is set, the recordholder recieves a prize proportional to how much they improved the record. This document outlines the competition rules.
+
 ---
 
 ### Overview
