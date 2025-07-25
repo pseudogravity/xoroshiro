@@ -2,13 +2,13 @@
 
 ## Bounty Problem 1: Decoration seed to world seed with known coordinates
 
-Minecraft@Home is proud to announce our first programming bounty competition, complete with a total prize pool of **over US $5000**. As a competitor, you are tasked with designing an efficient algorithm to solve a very difficult problem related to Minecraft seedfinding. The faster your code, the better. Prizes are awarded on a ongoing basis: whenever a new speed record is set, the recordholder recieves a prize proportional to how much they improved the record. This document outlines the competition rules.
+Minecraft@Home is proud to announce our first programming bounty competition, complete with a total prize pool of **US $5000**. As a competitor, you are tasked with designing an efficient algorithm to solve a very difficult problem related to Minecraft seedfinding. The faster your code, the better. Prizes are awarded on a ongoing basis: whenever a new speed record is set, the recordholder recieves a prize proportional to how much they improved the record. This document outlines the competition rules.
 
 ---
 
 ### Overview
 
-In Minecraft, each chunk has a decoration seed, a value derived from the world seed and the chunk's coordinates. This seed determines terrain features like trees, ores, and structures. While computing the decoration seed from a known world seed is straightforward, the reverse process is computationally difficult. Your challenge is to find a fast and efficient method for finding the world seeds which produce a target decoration seed at a specified location.
+In Minecraft, each chunk has a decoration seed, a value derived from the world seed and the chunk's coordinates. This seed determines features like trees, ores, and portions of structures. While computing the decoration seed from a known world seed is straightforward, the reverse process is computationally difficult. Your challenge is to find a fast and efficient method for finding the world seeds which produce a target decoration seed at a specified location.
 
 ---
 
@@ -90,7 +90,7 @@ Lower scores are better: a one‑point drop corresponds to cutting the brute‑f
 
 ---
 
-### Incremental Awards
+### Incremental Awards and Prize Pool
 
 Prize money is proportional to performance improvement over the current leader. Each "bit" of complexity reduction translates to a certain amount of money won.
 
@@ -100,11 +100,13 @@ Award = (previous top score - your score) / previous top score * remaining prize
 
 Example: if the leader’s score is 57.5 and your score is 56, you improve by 1.5 points and receive `1.5 / 57.5` of the remaining pool. This scheme rewards both incremental optimizations and major breakthroughs.
 
+The initial prize pool is approximately US \$5 000 and may grow with additional contributions. This corresponds to approximately $83 per point of improvement. As incremental prizes are awarded, the remaining funds will decrease accordingly, but the $83/point rate will remain the same.
+
 ---
 
-### Competition Duration and Prize Pool
+### Competition Duration
 
-The initial prize pool is approximately US \$5 000 and may grow with additional contributions or shrink as prizes are awarded. The competition will run for **at least one year**, though organizers may extend, pause, or close it as circumstances require. All prize payments are in **Monero (XMR)**, and winners will be asked for a destination wallet address.
+ The competition will run for **at least one year**, though organizers may extend, pause, or close it as circumstances require. All prize payments are in **Monero (XMR)**, and winners will be asked for a destination wallet address.
 
 ---
 
