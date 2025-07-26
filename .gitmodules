@@ -1,0 +1,3 @@
+[submodule "minvars-boinc/cnpy"]
+	path = minvars-boinc/cnpy
+	url = https://github.com/rogersce/cnpy.git
