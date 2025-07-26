@@ -354,20 +354,35 @@ bool load_checkpoint(VecXb& best, std::size_t& evals, std::mt19937& rng)
     }
     catch (...) { return false; }
 }
-
+void usage(){
+    printf("Usage:\n");
+    printf("--config [-c]: Config logical name for results reporting\n");
+    printf("--file [-f]: Config file actual path\n");
+    printf("--evals [-e]: Max evaluation count (integer)\n");
+    printf("--seed [-s]: RNG Seed\n");
+    exit(1);
+}
 // ───────────────────────────────────── main ─────────────────────────────────
 int main(int argc, char* argv[])
 {
-    if (argc < 4)
-    {
-        std::cerr << "Usage: " << argv[0] << " CONFIG.npz MAX_EVALS SEED [LOCAL_CONFIG.npz]\n";
-        return 1;
+    std::string configFile = "";
+    std::size_t maxEvals = 0;
+    unsigned long seed = 0;
+    std::string localConfig = "";
+    for(int i = 1; i < argc; i+=2){
+if(strcmp(argv[i], "--seed") == 0 || strcmp(argv[i], "-s") == 0){
+            seed = std::stoul(argv[i+1]);
+        } else if(strcmp(argv[i], "--config") == 0 || strcmp(argv[i], "-c") == 0){ 
+            configFile = argv[i+1];
+        } else if(strcmp(argv[i], "--file") == 0 || strcmp(argv[i], "-f") == 0){   
+            localConfig = argv[i+1];
+        } else if(strcmp(argv[i], "--evals") == 0 || strcmp(argv[i], "-e") == 0){ 
+            maxEvals = std::stoull(argv[i+1]);
+        } else{
+            printf("%s unrecognized.\n", argv[i]);
+            usage();
+        }
     }
-
-    const std::string configFile = argv[1];
-    const std::size_t maxEvals = std::stoull(argv[2]);
-    const unsigned long seed = std::stoul(argv[3]);
-    const std::string localConfig = (argc >= 5) ? argv[4] : "";
 
     const cnpy::npz_t cfg = cnpy::npz_load(localConfig.empty() ? configFile : localConfig);
 
