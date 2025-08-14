@@ -1,4 +1,4 @@
-(unofficial work-in-project text)
+(unofficial work-in-progress text)
 
 ## Bounty Problem 1: Decoration seed to world seed with known coordinates
 
