@@ -140,8 +140,8 @@ __global__ void searchKernel(uint64_t          start_seed_prefix,
                              uint64_t          block_z)
 {
     uint64_t gid       = blockIdx.x * blockDim.x + threadIdx.x;
-    uint64_t test_seed = ((start_seed_prefix + gid) << 4) +
-                         (decoration_seed & 0xFULL);
+    uint64_t test_seed = ((start_seed_prefix + gid) << 5) +
+                         ((decoration_seed + block_x + block_z) & 0x1FULL);
 
     PRNG128 prng{ test_seed ^ XH };
     if (goodLower32(prng,
@@ -191,8 +191,8 @@ int main(int argc, char **argv)
         }
     }
 
-    start_seed >>= 4;
-    end_seed   >>= 4;
+    start_seed >>= 5;
+    end_seed   >>= 5;
 
     CUDA_CHECK(cudaSetDevice(device_id));
 
