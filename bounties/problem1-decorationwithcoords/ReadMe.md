@@ -43,7 +43,7 @@ Given `worldSeed`, `chunkX`, and `chunkZ`, the program returns `a`, `b`, and the
 
 Right now, there is no efficient method to determine the world seed from the decoration seed. For this bounty competition, we are challenging you to develop a fast algorithm to solve this reverse problem. Given the values of **decoration seed**, **chunk x**, and **chunk z**, your code should output **all matching 64‑bit world seeds**.
 
-The current best known strategy is brute‑forcing over possible world seeds, leveraging the fact that the least‑significant four bits of the world seed must equal those of the decoration seed (because block coordinates are multiples of 16). This requires up to 2**60 checks. We have implemented this algorithm as a CUDA kernel in `decorationreverse.cu`, which serves as the baseline solution for this competition.
+The current best known strategy is brute‑forcing over possible world seeds, leveraging the fact that the least‑significant five bits of the decoration seed must equal the last five bits of world seed + block x + block y. This requires up to 2**59 checks. We have implemented this algorithm as a CUDA kernel in `decorationreverse.cu`, which serves as the baseline solution for this competition.
 
 Submitted code may be **parallelizable** or **non‑parallelizable**:
 
@@ -78,15 +78,15 @@ Example test cases can be generated with the forward algorithm in `worldtodeco
 
 ### Evaluation
 
-Submissions are judged on **expected runtime** relative to the baseline on a notional BOINC‑style grid of 256 desktop PCs, each with an RTX 4090 GPU and an i9‑13900K CPU. Because exhaustive 2**60 searches are infeasible to benchmark directly, Minecraft\@Home members will run partial benchmarks and extrapolate to this hypothetical environment.
+Submissions are judged on **expected runtime** relative to the baseline on a notional BOINC‑style grid of 256 desktop PCs, each with an RTX 4090 GPU and an i9‑13900K CPU. Because exhaustive 2**59 searches are infeasible to benchmark directly, Minecraft\@Home members will run partial benchmarks and extrapolate to this hypothetical environment.
 
 Each submission receives a **logarithmic score**:
 
 ```
-Score = 60 + log2(projected runtime of your code / projected runtime of baseline code decorationreverse.cu)
+Score = 59 + log2(projected runtime of your code / projected runtime of baseline code decorationreverse.cu)
 ```
 
-Lower scores are better: a one‑point drop corresponds to cutting the brute‑force complexity by one bit. Our baseline code, which performs a 60-bit brute force, is assigned a score of 60. If, for example, your submission yields an 8x speedup, it would be assigned a score of 57. We will aim to be fair and consistent, but organizers have final say. We will attempt to tune parameters (e.g., grid and block dimensions for GPU code) to maximize performance. Minor, inconsistent, or hard‑to‑measure improvements receive a tying score. Due to the difficulty of assigning scores, submissions that are not in contention for a prize may not receive a precise score. Submissions may be disqualified for rule violations, legal concerns, or impractical deployment.
+Lower scores are better: a one‑point drop corresponds to cutting the brute‑force complexity by one bit. Our baseline code, which performs a 59-bit brute force, is assigned a score of 59. If, for example, your submission yields an 8x speedup, it would be assigned a score of 56. We will aim to be fair and consistent, but organizers have final say. We will attempt to tune parameters (e.g., grid and block dimensions for GPU code) to maximize performance. Minor, inconsistent, or hard‑to‑measure improvements receive a tying score. Due to the difficulty of assigning scores, submissions that are not in contention for a prize may not receive a precise score. Submissions may be disqualified for rule violations, legal concerns, or impractical deployment.
 
 ---
 
