@@ -2,7 +2,7 @@
 
 ## Bounty Problem 1: Decoration seed to world seed with known coordinates
 
-Minecraft@Home is proud to announce our first programming bounty competition, complete with a total prize pool of **US $5000**. As a competitor, you are tasked with designing an efficient algorithm to solve a very difficult problem related to Minecraft seedfinding. The faster your code, the better. Prizes are awarded on a ongoing basis: whenever a new speed record is set, the recordholder recieves a prize proportional to how much they improved the record. This document outlines the competition rules.
+Minecraft\@Home is proud to announce our first programming bounty competition, complete with a total prize pool of **US $5000**. As a competitor, you are tasked with designing an efficient algorithm to solve a very difficult problem related to Minecraft seedfinding. The faster your code, the better. Prizes are awarded on an ongoing basis: whenever a new speed record is set, the record holder receives a prize proportional to how much they improved the record. This document outlines the competition rules.
 
 ---
 
@@ -43,7 +43,7 @@ Given `worldSeed`, `chunkX`, and `chunkZ`, the program returns `a`, `b`, and the
 
 Right now, there is no efficient method to determine the world seed from the decoration seed. For this bounty competition, we are challenging you to develop a fast algorithm to solve this reverse problem. Given the values of **decoration seed**, **chunk x**, and **chunk z**, your code should output **all matching 64‑bit world seeds**.
 
-The current best known strategy is brute‑forcing over possible world seeds, leveraging the fact that the least‑significant five bits of the decoration seed must equal the last five bits of world seed + block x + block y. This requires up to 2**59 checks. We have implemented this algorithm as a CUDA kernel in `decorationreverse.cu`, which serves as the baseline solution for this competition.
+The current best known strategy is brute‑forcing over possible world seeds, leveraging the fact that the least‑significant five bits of the decoration seed must equal the last five bits of world seed + blockX + blockZ. This requires up to 2**59 checks. We have implemented this algorithm as a CUDA kernel in `decorationreverse.cu`, which serves as the baseline solution for this competition.
 
 Submitted code may be **parallelizable** or **non‑parallelizable**:
 
@@ -100,7 +100,7 @@ Award = (previous top score - your score) / previous top score * remaining prize
 
 Example: if the leader’s score is 57.5 and your score is 56, you improve by 1.5 points and receive `1.5 / 57.5` of the remaining pool. This scheme rewards both incremental optimizations and major breakthroughs.
 
-The initial prize pool is approximately US \$5 000 and may grow with additional contributions. This corresponds to approximately $83 per point of improvement. As incremental prizes are awarded, the remaining funds will decrease accordingly, but the $83/point rate will remain the same.
+The initial prize pool is approximately US \$5 000 and may grow with additional contributions. This corresponds to slightly over $84 per point of improvement. As incremental prizes are awarded, the remaining funds will decrease accordingly, but the $84/point rate will remain the same.
 
 ---
 
