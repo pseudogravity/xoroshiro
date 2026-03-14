@@ -78,7 +78,7 @@ Example test cases can be generated with the forward algorithm in `worldtodeco
 
 ### Evaluation
 
-Submissions are judged on **expected runtime** relative to the baseline on a notional BOINC‑style grid of 256 desktop PCs, each with an RTX 4090 GPU and an i9‑13900K CPU. Because exhaustive 2**59 searches are infeasible to benchmark directly, Minecraft\@Home members will run partial benchmarks and extrapolate to this hypothetical environment.
+Submissions are judged on **expected runtime** relative to the baseline on a notional BOINC‑style grid of 16 desktop PCs, each with an RTX 4090 GPU and an i9‑13900K CPU. Because exhaustive 2**59 searches are infeasible to benchmark directly, Minecraft\@Home members will run partial benchmarks and extrapolate to this hypothetical environment.
 
 Each submission receives a **logarithmic score**:
 
