@@ -1,4 +1,4 @@
-(unofficial work-in-progress text)
+Important: Below is a publicly-visible work-in-progress draft for a potential future bounty problem. This bounty is not (and may not ever be) live. It is not an official announcement.
 
 ## Bounty Problem 1: Decoration seed to world seed with known coordinates
 
