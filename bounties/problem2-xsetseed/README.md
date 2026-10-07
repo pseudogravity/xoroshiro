@@ -1,4 +1,4 @@
-(draft statement)
+Important: Below is a publicly-visible work-in-progress draft for a potential future bounty problem. This bounty is not (and may not ever be) live. It is not an official announcement.
 
 ## Bounty Problem 2: xSetSeed reversal from 64 linear constraints
 
